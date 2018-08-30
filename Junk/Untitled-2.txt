@@ -1,0 +1,74 @@
+scandesc = scanstate->css_currentScanDesc;
+scanstate = node->scanstate->css_currentScanDesc;
+->SeqNext(SeqScan *node)
+    **reset econtext
+    econtext = scanstate->cstate.cs_ExprContext;
+    p *accessMtd = {TupleTableSlot *(Scan *)} 0x8517610 <SeqNext>
+    ->ExecScan(Scan *node,
+        -> ExecSeqScan(SeqScan *node)
+            ->ExecAgg (node=0xbba4270)
+                ->ExecProcNode (node=0xbba08e0, **parent=/**)
+
+
+(CommonScanState *) 0xaf9a780
+
+(HeapScanDesc) 0xb039fb4
+
+
+
+#0  ExecAgg (node=0xbb42054) at /nz/prak_workspaces/7214/main/src/pg/backend/executor/nodeAgg.c:643
+#1  0x08500b1e in ExecProcNode (node=0xbb42054, parent=0xbb42054) at /nz/prak_workspaces/7214/main/src/pg/backend/executor/execProcnode.c:522
+#2  0x084fdff0 in ExecutePlan (estate=0xbb42198, plan=0xbb42054, operation=CMD_SELECT, numberTuples=2, direction=ForwardScanDirection,
+    destfunc=0xad92ad0) at /nz/prak_workspaces/7214/main/src/pg/backend/executor/execMain.c:3187
+#3  0x084f8bf8 in ExecutorRun (queryDesc=0xbb45cc8, estate=0xbb42198, feature=4, count=2)
+    at /nz/prak_workspaces/7214/main/src/pg/backend/executor/execMain.c:265
+#4  0x085217b4 in _SPI_pquery (cmState=0xae9e9b0, queryDesc=0xbb45cc8, state=0xbb42198, tcount=2)
+    at /nz/prak_workspaces/7214/main/src/pg/backend/executor/spi.c:2242
+#5  0x085213dd in _SPI_execute_with_vals (cmState=0xae9e9b0, src=0xbaa4aa0 "SELECT  count(*) from TAQ_QUOTE_COND", nargs=0, argtypes=0xbadd3f8,
+    Values=0xbaa24e8, Nulls=0xbaa2718 "", tcount=2) at /nz/prak_workspaces/7214/main/src/pg/backend/executor/spi.c:2070
+#6  0x0851dd29 in SPI_execb (cmState=0xae9e9b0, src=0xbaa4aa0 "SELECT  count(*) from TAQ_QUOTE_COND", nargs=0, argtypes=0xbadd3f8, values=0xbaa24e8,
+    Nulls=0xbaa2718 "", tcount=2) at /nz/prak_workspaces/7214/main/src/pg/backend/executor/spi.c:663
+#7  0x08737cb1 in exec_run_select (cmState=0xae9e9b0, estate=0xffc782f0, expr=0xbaa49e8, maxtuples=2)
+    at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_exec.c:3657
+#8  0x08737523 in exec_eval_expr (cmState=0xae9e9b0, estate=0xffc782f0, expr=0xbaa49e8, isNull=0xffc780bf "", rettype=0xffc780c0)
+    at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_exec.c:3435
+#9  0x08736c7a in exec_assign_expr (cmState=0xae9e9b0, estate=0xffc782f0, target=0xbaa0c70, expr=0xbaa49e8)
+    at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_exec.c:3109
+#10 0x08734274 in exec_stmt_assign (cmState=0xae9e9b0, estate=0xffc782f0, stmt=0xbaa4b50)
+    at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_exec.c:1507
+#11 0x08733ae9 in exec_stmt (cmState=0xae9e9b0, estate=0xffc782f0, stmt=0xbaa4b50) at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_exec.c:1298
+#12 0x08733a48 in exec_stmts (cmState=0xae9e9b0, estate=0xffc782f0, stmts=0xbb9b5b8)
+    at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_exec.c:1268
+#13 0x08733612 in exec_stmt_block (cmState=0xae9e9b0, estate=0xffc782f0, block=0xbaa4be8)
+    at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_exec.c:1059
+#14 0x087323b3 in plpgsql_exec_function (cmState=0xae9e9b0, func=0xbab06f0, fcinfo=0xbbd62b0)
+    at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_exec.c:420
+#15 0x0872ce9d in plpgsql_call_handler (fcinfo=0xbbd62b0) at /nz/prak_workspaces/7214/main/src/pg/pl/plpgsql/src/pl_handler.c:216
+#16 0x0850346b in ExecMakeFunctionResult (fcache=0xbbd629c, arguments=0x0, econtext=0xbbd68fc, isNull=0xffc78584 "", isDone=0x0)
+    at /nz/prak_workspaces/7214/main/src/pg/backend/executor/execQual.c:1022
+#17 0x085035df in ExecEvalFunc (funcClause=0xbbd68d0, econtext=0xbbd68fc, isNull=0xffc78584 "", isDone=0x0)
+    at /nz/prak_workspaces/7214/main/src/pg/backend/executor/execQual.c:1122
+#18 0x085041c3 in ExecEvalExpr (expression=0xbbd68d0, econtext=0xbbd68fc, isNull=0xffc78584 "", isDone=0x0, resultType=0x0)
+    at /nz/prak_workspaces/7214/main/src/pg/backend/executor/execQual.c:1505
+#19 0x0850441e in ExecEvalExprSwitchContext (expression=0xbbd68d0, econtext=0xbbd68fc, isNull=0xffc78584 "", isDone=0x0)
+    at /nz/prak_workspaces/7214/main/src/pg/backend/executor/execQual.c:1592
+#20 0x086169bf in simplify_op_or_func (expr=0xbbd67b4, args=0x0, pstate=0x0)
+    at /nz/prak_workspaces/7214/main/src/pg/backend/optimizer/util/clauses.c:3737
+#21 0x0861577d in eval_const_expressions_mutator (node=0xbbd67b4, context=0xffc78a7c)
+    at /nz/prak_workspaces/7214/main/src/pg/backend/optimizer/util/clauses.c:3051
+#22 0x08617c2a in expression_tree_mutator (node=0xbbd614c, mutator=0x8615667 <eval_const_expressions_mutator>, context=0xffc78a7c)
+---Type <return> to continue, or q <return> to quit---q
+ at /nz/prak_workspacesQuit
+(gdb) p node
+$1 = (Agg *) 0xbb42054
+(gdb) p *node
+$2 = {plan = {type = T_Agg, startup_cost = 0.00016666666666666666, total_cost = 0.00016666666666666666, confidence = 0, plan_rows = 1, plan_width = 8,
+    isfacttable = 0 '\000', fromjitstats = 0 '\000', maxextents = 0, totalextents = 0, cardinality_info = 0x0, visible_tblname = 0x0,
+    visible_tblver = 0, orig_tbloid = 0, mviewoid = 0, mvmaxextents = 0, mvtotalextents = 0, state = 0xbb42198, targetlist = 0xbb465a0, qual = 0x0,
+    lefttree = 0xbb41f1c, righttree = 0x0, extParam = 0x0, locParam = 0x0, chgParam = 0x0, initPlan = 0x0, subPlan = 0x0, nParamExec = 0,
+    pathkeys = 0x0, xplanlist = 0xbb45334, parent = 0x0, cache = 0x0, pbOid = 0, queryFlags = {m_mergejoin_enabled = 1 '\001',
+      m_jitstats_enabled = 1 '\001', m_2phase_planner_enabled = 1 '\001', m_jit_dispersion_enabled = 1 '\001', m_jit_join_enabled = 1 '\001',
+      m_transform_joinexpr_enabled = 1 '\001', m_transform_outerjoinexpr_enabled = 1 '\001', m_enable_outerjoin_exists_pushdown = 1 '\001',
+      m_is_insert_values_clause = 0 '\000', m_copy_rowids_for_rst = 0 '\000', m_compressed_xt_from_rst = 0 '\000', m_command_info_enabled = 1 '\001',
+      m_accum_row_count_enabled = 1 '\001'}, plannerFlags = 0, isAnalyze = 0 '\000'}, aggstate = 0xbb426e4, mergeagg = 1 '\001', windowagg = 0 '\000',
+  sortedagg = 0 '\000', mixed_aggrs = 0 '\000'}

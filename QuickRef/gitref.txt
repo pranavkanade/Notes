@@ -1,0 +1,16 @@
+# Git Ref
+
+```bash
+# remote repo - git@github.ibm.com:privatecloud-ap/RAS.git
+# remote machine - root@dashdbras-head.fyre.ibm.com
+
+# Check current remote
+git remote -v
+
+# remote current remote
+git remote rm origin
+
+# add new remote origin
+git remote add origin <addr>
+```
+
