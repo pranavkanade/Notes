@@ -10,3 +10,27 @@ pip install -e .
 ```
 
  
+
+
+
+```python
+        try:
+            proc = subprocess.Popen(cmd,
+                                    stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE,
+                                    shell=shell)
+            output, errmsg = proc.communicate()
+            return_code = proc.returncode
+
+        except OSError as e:
+            return_code = e.errno
+            errmsg = "Exception: %s, errmsg: '%s', return code: %i, cmd: %s" % \
+                ('OSError',
+                 e.strerror,
+                 return_code,
+                 cmd)
+            self.set_err(errmsg)
+            self.logger.debug(self.errmsg, exc_info=sys.exc_info())
+            return (output, errmsg, return_code)
+```
+

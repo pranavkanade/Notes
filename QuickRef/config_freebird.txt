@@ -1,6 +1,0 @@
-```bash
-# get internet access
-export http_proxy=http://pranav_kanade:form3\&myself@brproxy.persistent.co.in:8080 
-export https_proxy=https://pranav_kanade:form3\&myself@brproxy.persistent.co.in:8080 
-```
-
