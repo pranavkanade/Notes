@@ -21,21 +21,21 @@
 
   - Review pending
 
-- [x] #260
+- [ ] #260
 
   - `docker exec -u db2inst1 -it dashDB bash -lc "wvcli system devices"` -> every thing needs to be up and then only you should encounter the error
   - Figured out the error
   - Do not have any more information on what could be done in regards to this.
   - The machines were the biggest problem.
 
-- [ ] #265 - Bug => Find nodes (**Need to talk to Kiran**)
+- [x] #265 - Bug => Find nodes (**Need to talk to Kiran**)
 
   - Found the point where the changes need to be made.
   - Take a look at `20180828.md` notebook  contains extensive report on what are the possibilities. 
 
 - [ ] #117
 
-- [ ] Solve [tutorail vue](https://scotch.io/courses/build-a-twitter-clone-with-adonis-and-vue/why-adonis)
+- [ ] Solve [tutorial vue](https://scotch.io/courses/build-a-twitter-clone-with-adonis-and-vue/why-adonis)
 
 
 

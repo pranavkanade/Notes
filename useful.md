@@ -1,5 +1,7 @@
 # Useful Commands
 
+[TOC]
+
 ## CTAGS
 
 Keyboard command | Action |
