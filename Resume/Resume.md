@@ -5,12 +5,13 @@
 - In morning, I am a software engineer at **Persistent Systems**. 
 
 * But at night I am a **pythonista** , who is in pursuit of building the **AI programmer**.
+* You will always find me experimenting with some new technology. Currently Blockchain has my attention.
 
 ## Initiatives
 
 * [Sunday-Projects](https://github.com/pskanade/sunday-projects):
-  * Its main goal was to get familiar with different technologies. 
-  * The aim of it is to develop an end to end running project using new and up-coming technologies.
+  * **Aim:** To experiment with new technologies. 
+  * It gives me an opportunity to learn how some of the new technology works. It helps in identifying the use cases where a particular tech will be useful.
 * Load-star:
   * This was a group that I'd started during my second year of college.
   * I started this with an aim to help students to address their problems.
