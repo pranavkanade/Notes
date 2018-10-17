@@ -1,39 +1,12 @@
 # Tasks
 
-- [x] #263
-  - Questions - Is there need to find the status for all the nodes or not. ? Current code changes only look at *CPU 0*
-
-  ```bash
-  python ./aphealth check --components ap/cpu_issues
-  ```
-
 - [ ] #264
 
-  - Cumulative results are remaining 
-
-  - **Don't know how to check any heavy query**
-
-    `apdBase.py:copy_remote_contents`
-
-    only `HEAD`
+  - provide new changes for use median here of all the performances and use that as a base line
 
 - [x] #257
 
   - Review pending
-
-- [ ] #260
-
-  - `docker exec -u db2inst1 -it dashDB bash -lc "wvcli system devices"` -> every thing needs to be up and then only you should encounter the error
-  - Figured out the error
-  - Do not have any more information on what could be done in regards to this.
-  - The machines were the biggest problem.
-
-- [x] #265 - Bug => Find nodes (**Need to talk to Kiran**)
-
-  - Found the point where the changes need to be made.
-  - Take a look at `20180828.md` notebook  contains extensive report on what are the possibilities. 
-
-- [ ] #117
 
 - [ ] Solve [tutorial vue](https://scotch.io/courses/build-a-twitter-clone-with-adonis-and-vue/why-adonis)
 
