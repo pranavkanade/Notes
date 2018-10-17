@@ -73,4 +73,9 @@ pdb.set_trace()  # this sets the break point
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
    ```
 
-   
+2. Font - [Fira Code](https://github.com/tonsky/FiraCode)
+
+## Reference Posts
+
+* [Exporting the git configuration](https://blog.praveen.science/best-way-to-import-or-export-the-git-configuration/)
+
