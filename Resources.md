@@ -111,3 +111,9 @@ sudo apt-get install tmux
 
 * [Exporting the git configuration](https://blog.praveen.science/best-way-to-import-or-export-the-git-configuration/)
 
+
+
+### Links
+
+* https://github.com/karpathy/char-rnn
+* https://github.com/primaryobjects/AI-Programmer
