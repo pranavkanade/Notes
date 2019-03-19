@@ -6,7 +6,9 @@ python -m spacy download en_core_web_lg
 # link - https://github.com/huggingface/neuralcoref
 git clone https://github.com/huggingface/neuralcoref
 cd neuralcoref
+pip install Cython
 pip install -e .
+pip install https://github.com/huggingface/neuralcoref-models/releases/download/en_coref_lg-3.0.0/en_coref_lg-3.0.0.tar.gz
 ```
 
  

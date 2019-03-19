@@ -84,8 +84,8 @@ pdb.set_trace()  # this sets the break point
 
    ```bash
    apt-get install curl python-software-properties
-   curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-   apt-get install nodejs
+   curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+   sudo apt-get install -y nodejs
    ```
 
 4. vim -
@@ -117,3 +117,21 @@ sudo apt-get install tmux
 
 * https://github.com/karpathy/char-rnn
 * https://github.com/primaryobjects/AI-Programmer
+
+
+## Proxy -
+
+brbc1.persistent.co.in
+proxy.us.ibm.com
+
+## [Remote edit with vscode](https://medium.com/@prtdomingo/editing-files-in-your-linux-virtual-machine-made-a-lot-easier-with-remote-vscode-6bb98d0639a4)
+1. Install `remote-vscode` plugin
+2. Get rmate on remote machine -
+```
+$ sudo wget -O /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rmate
+$ sudo chmod a+x /usr/local/bin/rmate
+```
+2. Check its setup, server should be set to `localhost`.
+3. Run `ssh -R 52698:localhost:52698 VIRTUAL_MACHINE_IP_ADDRESS` from server.
+> e.g. `ssh -R 52698:localhost:52698 root@10.53.20.144`
+4. From remote machine use `rmate filename` to open the file in vscode.
